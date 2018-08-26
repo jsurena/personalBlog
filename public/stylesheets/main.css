@@ -6,6 +6,17 @@ body {
     background-color: #000000;
 }
 
+#read-more {
+    color: #E50529;
+    border-color: #D90562;
+    margin-left: 1.5rem;
+}
+
+#read-more:hover {
+    color: #000000;
+    background: #E50529;
+}
+
 #search-button {
     color: #E50529;
     border-color: #D90562;
@@ -29,4 +40,29 @@ body {
     border: 0.05rem solid #E50529;
     border-radius: 1.8rem;
     padding: 1rem 1rem;
+}
+
+.preview-title {
+    font-size: 1.7rem;
+    font-weight: 400;
+}
+
+.preview-author {
+    font-size: 1.022rem;
+    padding-left: 2rem;
+}
+
+.preview-date {
+    font-size: .92rem;
+    padding-left: 2rem;
+}
+
+.preview-content {
+    padding-top: 2vh;
+    padding-left: 1.5rem;
+}
+
+.preview-image {
+    max-width: 25vh;
+    max-height: 25vh;
 }
