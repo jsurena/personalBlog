@@ -1,3 +1,7 @@
+body {
+    padding-top: 10vh;
+}
+
 #main-nav {
     background-color: #000000;
 }
@@ -12,6 +16,17 @@
     background: #E50529;
 }
 
-.nav-item.active:hover {
+.navbar-dark .navbar-nav .nav-link {
+    color: #fcfbfc;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
     color: #FFFFFF;
+}
+
+.jumbotron.previews {
+    background-color: #ffffff;
+    border: 0.05rem solid #E50529;
+    border-radius: 1.8rem;
+    padding: 1rem 1rem;
 }
