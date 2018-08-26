@@ -1,0 +1,17 @@
+#main-nav {
+    background-color: #000000;
+}
+
+#search-button {
+    color: #E50529;
+    border-color: #D90562;
+}
+
+#search-button:hover {
+    color: #000000;
+    background: #E50529;
+}
+
+.nav-item.active:hover {
+    color: #FFFFFF;
+}
