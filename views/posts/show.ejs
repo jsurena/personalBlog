@@ -1,0 +1,41 @@
+<% include ../partials/header.ejs %>
+
+<% if(id.toString() === "1"){ %>
+    <div class="container">
+        <h1 class="display-4">Bacon Ipsum</h1>
+        <div class="jumbotron post">
+            <% include baconipsum.ejs %>
+        </div>
+    
+    </div>
+<% } %>
+
+<% if(id.toString() === "2"){ %>
+    <div class="container">
+        <h1 class="display-4">Who Am I?</h1>
+        <div class="jumbotron post">
+            <% include whoami.ejs %>
+        </div>
+    
+    </div>
+<% } %>
+
+<% if(id.toString() === "3"){ %>
+    <div class="container">
+        <h1 class="display-4">The Catch Up</h1>
+        <div class="jumbotron post">
+            <% include thecatchup.ejs %>
+        </div>
+    
+    </div>
+<% } if(id.toString() > "3"){ %>
+    <div class="container">
+        <h1 class="display-4">No post here!</h1>
+        <div class="jumbotron post">
+            <h1>Uh oh, no post found here!</h1>
+        </div>
+    
+    </div>
+<% } %>
+
+<% include ../partials/footer.ejs %>

@@ -18,13 +18,17 @@ body {
 }
 
 #search-button {
-    color: #E50529;
-    border-color: #D90562;
+    color: #FFFFFF;
+    border-color: #FFFFFF;
 }
 
 #search-button:hover {
     color: #000000;
-    background: #E50529;
+    background: #FFFFFF;
+}
+
+.about-me-question {
+    
 }
 
 .navbar-dark .navbar-nav .nav-link {
@@ -40,6 +44,20 @@ body {
     border: 0.05rem solid #E50529;
     border-radius: 1.8rem;
     padding: 1rem 1rem;
+}
+
+.jumbotron.about {
+    background-color: #ffffff;
+    border: 0.05rem solid #E50529;
+    border-radius: 1.8rem;
+    padding-top: 2rem;
+}
+
+.jumbotron.post {
+    background-color: #ffffff;
+    border: 0.05rem solid #E50529;
+    border-radius: 1.8rem;
+    padding-top: 2rem;
 }
 
 .preview-title {
