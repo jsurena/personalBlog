@@ -68,6 +68,7 @@ body {
 .preview-author {
     font-size: 1.022rem;
     padding-left: 2rem;
+    font-style: italic;
 }
 
 .preview-date {
@@ -83,4 +84,29 @@ body {
 .preview-image {
     max-width: 25vh;
     max-height: 25vh;
+}
+
+.post-image {
+    display: block;
+    max-width: 50vh;
+    max-height: 50vh;
+    margin: 1vh auto 3vh auto;
+}
+
+.post-author {
+    font-size: 1.2rem;
+    font-style: italic;
+}
+
+.post-date {
+    font-size: .95rem;
+}
+
+.lead {
+    font-size: 1.15rem;
+}
+
+.lead-rule {
+    border-left: 2px solid #E50529;
+    padding-left: 2vh;
 }
