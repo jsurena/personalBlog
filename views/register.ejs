@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css">
+
+<% include partials/header %>
+    <div class="container">
+        <h1 class="display-4">The Black Code: Sign Up</h1>
+    
+        <div class="jumbotron new-post">
+            <form class="ui form" action="/" method="POST">
+                <div class="field">
+                    <label>Username:</label>
+                    <input type="text" name="username" placeholder="Username" required>
+                </div>
+                <div class="field">
+                    <label>Password:</label>
+                    <input type="password" name="password" placeholder="Password" required>
+                </div>
+                <div class="field">
+                    <label>Repeat Password:</label>
+                    <input type="password" name="passwordCheck" placeholder="Re-type Password" required>
+                </div>
+                <div class="field">
+                    <label>E-mail:</label>
+                    <input type="email" name="email" placeholder="E-mail" required>
+                </div>
+                <input class="btn btn-lg btn-outline-danger red-button" type="submit">
+            </form>
+        </div>
+    </div>
+<% include partials/footer %>

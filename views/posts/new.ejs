@@ -8,15 +8,15 @@
             <form class="ui form" action="/posts" method="POST">
                 <div class="field">
                     <label>Title</label>
-                    <input type="text" name="blog[title]" placeholder="Title" required>
+                    <input type="text" name="title" placeholder="Title" required>
                 </div>
                 <div class="field">
                     <label>Image (Optional)</label>
-                    <input type="text" name="blog[image]" placeholder="Image URL">
+                    <input type="text" name="image" placeholder="Image URL">
                 </div>
                 <div class="field">
                     <label>Blog Content</label>
-                    <textarea name="blog[body]" required></textarea>
+                    <textarea name="body" required></textarea>
                 </div>
                 <input class="btn btn-lg btn-outline-danger red-button" type="submit">
             </form>
