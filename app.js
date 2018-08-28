@@ -7,21 +7,15 @@ var express         = require("express"),
     bodyParser      = require("body-parser"),
     mongoose        = require("mongoose"),
     flash           = require("connect-flash"),
-    Post            = require("./models/posts"),
-    User            = require("./models/users"),
-    Comment         = require("./models/comments");
+    Post            = require("./models/post"),
+    User            = require("./models/user"),
+    Comment         = require("./models/comment");
     
 var indexRoutes = require("./routes/index");
 var postRoutes  = require("./routes/posts");
 
 mongoose.connect("mongodb://" + process.env.IP + "/the_black_code", { useNewUrlParser: true });
 var db = mongoose.connection;
-
-// Blog.create({
-//     title: "Test Blog",
-//     image: "https://source.unsplash.com/DziZIYOGAHc",
-//     body:"HELLO THIS IS A BLOG POST"
-// });
 
 db.on("error", console.error.bind(console, "connection error:"));
 db.once("open", function(){
@@ -36,6 +30,12 @@ app.use(flash());
 
 app.use(indexRoutes);
 app.use(postRoutes);
+
+Post.create({
+    title: "Test Blog",
+    image: "https://source.unsplash.com/alt9KvwlERg",
+    content:"HELLO THIS IS A BLOG POST"
+});
 
 app.listen(process.env.PORT, process.env.IP, function(){
    console.log("Personal blog has started."); 
