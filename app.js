@@ -11,6 +11,8 @@ var express         = require("express"),
 var indexRoutes = require("./routes/index");
 var postRoutes  = require("./routes/posts");
 
+mongoose.connect("mongodb://" + process.env.IP + "/the_black_code", { useNewUrlParser: true });
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
