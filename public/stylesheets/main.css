@@ -1,5 +1,6 @@
 body {
     padding-top: 10vh;
+    font-size: 1rem;
 }
 
 #main-nav {
@@ -53,7 +54,7 @@ body {
     padding-top: 2rem;
 }
 
-.jumbotron new-post {
+.jumbotron.new-post {
     background-color: #ffffff;
     border: 0.05rem solid #E50529;
     border-radius: 1.8rem;
@@ -116,4 +117,14 @@ body {
 .lead-rule {
     border-left: 2px solid #E50529;
     padding-left: 2vh;
+}
+
+.red-button {
+    color: #E50529;
+    border-color: #D90562;
+}
+
+.red-button:hover {
+    color: #000000;
+    background: #E50529;
 }

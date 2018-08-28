@@ -1,12 +1,25 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css">
+
 <% include ../partials/header %>
     <div class="container">
         <h1 class="display-4">The Black Code</h1>
     
         <div class="jumbotron new-post">
-            <form action="/" method="POST">
-                <input type="text" name="blog[title]" placeholder="Title" required>
-                <input type="text" name="blog[image]" placeholder="Image URL (Optional">
-            </form> 
+            <form class="ui form" action="/posts" method="POST">
+                <div class="field">
+                    <label>Title</label>
+                    <input type="text" name="blog[title]" placeholder="Title" required>
+                </div>
+                <div class="field">
+                    <label>Image (Optional)</label>
+                    <input type="text" name="blog[image]" placeholder="Image URL">
+                </div>
+                <div class="field">
+                    <label>Blog Content</label>
+                    <textarea name="blog[body]" required></textarea>
+                </div>
+                <input class="btn btn-lg btn-outline-danger red-button" type="submit">
+            </form>
         </div>
     </div>
 <% include ../partials/footer %>
