@@ -31,11 +31,11 @@ app.use(flash());
 app.use(indexRoutes);
 app.use(postRoutes);
 
-Post.create({
-    title: "Test Blog",
-    image: "https://source.unsplash.com/alt9KvwlERg",
-    content:"HELLO THIS IS A BLOG POST"
-});
+// Post.create({
+//     title: "Test Blog",
+//     image: "https://source.unsplash.com/alt9KvwlERg",
+//     content:"HELLO THIS IS A BLOG POST"
+// });
 
 app.listen(process.env.PORT, process.env.IP, function(){
    console.log("Personal blog has started."); 
