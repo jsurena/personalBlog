@@ -54,6 +54,13 @@ body {
     padding-top: 2rem;
 }
 
+.jumbotron.gallery {
+    background-color: #ffffff;
+    border: 0.05rem solid #E50529;
+    border-radius: 1.8rem;
+    padding-top: 2rem;
+}
+
 .jumbotron.new-post {
     background-color: #ffffff;
     border: 0.05rem solid #E50529;
