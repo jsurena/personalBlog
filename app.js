@@ -28,6 +28,19 @@ app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
 app.use(flash());
 
+// PASSPORT CONFIGURATION
+app.use(require("express-session")({
+    secret: "Once again, Rusty wins cutest dog!",
+    resave: false,
+    saveUninitialized: false
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new localStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
 app.use(indexRoutes);
 app.use(postRoutes);
 
