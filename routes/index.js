@@ -44,10 +44,16 @@ router.get("/login", function(req, res){
 
 router.post("/login", passport.authenticate("local", 
     {
-        successRedirect: "/",
+        successRedirect: "back",
         failureRedirect: "/login"
     }), function(req, res){
 });
 
+
+// LOGGING OUT
+router.get("/logout", function(req, res){
+   req.logout();
+   res.redirect("back");
+});
 
 module.exports = router;
