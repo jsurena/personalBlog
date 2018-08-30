@@ -16,12 +16,27 @@ router.get("/gallery", function(req, res){
     res.render("gallery");
 })
 
+// REGISTRATION
+router.get("/register", function(req, res){
+    res.render("register");
+});
+
+router.post("/register", function(req, res){
+    var newUser = new User({username: req.body.username, email: req.body.email});
+    User.register(newUser, req.body.password, function(err, user){
+        if(err){
+            return res.render("register", {"error": err.message});
+        }
+        passport.authenticate("local")(req, res, function(){
+            res.redirect("/");
+        });
+    });
+});
+
+// LOGGING IN
 router.get("/login", function(req, res){
     res.render("login");
 });
 
-router.get("/register", function(req, res){
-    res.render("register");
-});
 
 module.exports = router;
