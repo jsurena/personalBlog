@@ -6,6 +6,10 @@ body {
     font-size: 18px;
 }
 
+p {
+    font-size: 0.96rem;
+}
+
 #logged-in-user {
     opacity: 0.6;
 }
@@ -36,10 +40,12 @@ body {
 }
 
 .about-me-question {
-    
+    color: #E50529;
+    font-weight: 700;
+    text-align: center;
 }
 
-h1.display-4 {
+.display-4 {
     font-family: 'Iceland', cursive;
 }
 
