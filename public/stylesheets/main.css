@@ -1,6 +1,12 @@
 body {
     padding-top: 10vh;
     font-size: 1rem;
+    font-family: 'Kelly Slab', cursive;
+    font-size: 18px;
+}
+
+#logged-in-user {
+    opacity: 0.6;
 }
 
 #main-nav {
@@ -30,6 +36,10 @@ body {
 
 .about-me-question {
     
+}
+
+h1.display-4 {
+    font-family: 'Iceland', cursive;
 }
 
 .navbar-dark .navbar-nav .nav-link {
