@@ -1,11 +1,18 @@
 var express    = require ("express"),
     router     = express.Router(),
     User       = require("../models/user"),
+    Post       = require("../models/post"),
     passport   = require("passport");
     
 
 router.get("/", function(req, res){
-    res.render("home");
+    Post.find({}, function(err, posts){
+        if(err){
+            console.log("ERROR");
+        } else {
+            res.render("home", {posts: posts});
+        }
+    });
 });
 
 router.get("/about", function(req, res){
