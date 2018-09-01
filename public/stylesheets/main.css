@@ -6,12 +6,17 @@ body {
     font-size: 18px;
 }
 
+h1{
+    display: inline-block;
+}
+
 p {
     font-size: 0.96rem;
 }
 
 #logged-in-user {
     opacity: 0.6;
+    font-size: 0.98rem;
 }
 
 #main-nav {
@@ -45,16 +50,18 @@ p {
     text-align: center;
 }
 
+.add-new {
+    margin-left: 2vh;
+    margin-bottom: 2.5vh;
+    padding: 0.8vh;
+}
+
 .display-4 {
     font-family: 'Iceland', cursive;
 }
 
-.navbar-dark .navbar-nav .nav-link {
-    color: #fcfbfc;
-}
-
-.navbar-dark .navbar-nav .nav-link:hover {
-    color: #FFFFFF;
+.form-inline {
+    display: inline-block;
 }
 
 .jumbotron.previews {
@@ -103,6 +110,14 @@ p {
 
 .nav-social {
     
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #fcfbfc;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #FFFFFF;
 }
 
 .preview-title {
