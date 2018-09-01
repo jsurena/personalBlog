@@ -1,7 +1,8 @@
 body {
     padding-top: 10vh;
     font-size: 1rem;
-    font-family: 'Kelly Slab', cursive;
+    /*font-family: 'Kelly Slab', cursive;*/
+    font-family: 'Playfair Display', serif;
     font-size: 18px;
 }
 
@@ -85,6 +86,15 @@ h1.display-4 {
     padding-top: 2rem;
 }
 
+.navbar-brand {
+    font-family: 'Iceland', cursive;
+    font-size: 1.35rem;
+}
+
+.nav-item:hover {
+    background-color: #444444;
+}
+
 .nav-social {
     
 }
@@ -119,6 +129,8 @@ h1.display-4 {
     display: block;
     max-width: 50vh;
     max-height: 50vh;
+    min-width: 50vh;
+    min-height: 50vh;
     margin: 1vh auto 3vh auto;
 }
 
