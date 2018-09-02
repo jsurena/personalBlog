@@ -1,6 +1,7 @@
 var express    = require ("express"),
     Post       = require("../models/post"),
-    router     = express.Router();
+    router     = express.Router(),
+    DOMParser  = require("dom-parser");
 
 router.get("/posts/new", function(req, res){
     res.render("./posts/new");
@@ -12,8 +13,8 @@ router.get("/posts/:id", function(req, res){
         if(err) {
             console.log("ERROR");
         } else {
-            let content = new DOMParser().parseFromString(foundPost.content, 'text/html');
-            res.render("./posts/show", {post: foundPost}); 
+            let content = new DOMParser().parseFromString(foundPost.content);
+            res.render("./posts/show", {post: foundPost, content: content}); 
         }
     });
 });
