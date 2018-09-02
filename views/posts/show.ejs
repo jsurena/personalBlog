@@ -1,11 +1,12 @@
 <% include ../partials/header.ejs %>
 
-
 <div class="container">
     <h1 class="display-4"><%= post.title %></h1>
     <div class="jumbotron post">
         <img class="align-self-center post-image" src="<%= post.image %>">
+        <div id="the-content">
         <%= post.content %>
+        </div>
         <p></p>
         <p class ="post-author">By: <%= post.author.username %></p>
         <p class ="post-date"><%= post.created.toDateString() %></p>
