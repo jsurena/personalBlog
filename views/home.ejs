@@ -5,7 +5,7 @@
     
     <div class="jumbotron previews">
         <div class="previews">
-            <% posts.forEach(function(post){ %>
+            <% for(var i = posts.length - 1; i >= 0; i--){ post = posts[i]; %>
                 
             <div class="media">
                 <img class="align-self-center mr-3 preview-image" src="<%= post.image %>">
@@ -22,7 +22,7 @@
             
             <hr>
             
-            <% }) %>
+            <% } %>
         <!--    <div class="media">-->
         <!--        <img class="align-self-center mr-3 preview-image" src="https://source.unsplash.com/bEcC0nyIp2g">-->
         <!--        <div class="media-body">-->

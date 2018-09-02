@@ -15,6 +15,10 @@ router.get("/", function(req, res){
     });
 });
 
+router.get("/test", function(req, res){
+   res.render("testEditor"); 
+});
+
 router.get("/about", function(req, res){
    res.render("aboutme"); 
 });
