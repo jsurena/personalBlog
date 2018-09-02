@@ -12,6 +12,7 @@ router.get("/posts/:id", function(req, res){
         if(err) {
             console.log("ERROR");
         } else {
+            let content = new DOMParser().parseFromString(foundPost.content, 'text/html');
             res.render("./posts/show", {post: foundPost}); 
         }
     });
