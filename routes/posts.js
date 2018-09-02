@@ -6,8 +6,15 @@ router.get("/posts/new", function(req, res){
     res.render("./posts/new");
 });
 
+//SHOW ROUTE
 router.get("/posts/:id", function(req, res){
-   res.render("./posts/show", {id: req.params.id}); 
+    Post.findById(req.params.id, function(err, foundPost){
+        if(err) {
+            console.log("ERROR");
+        } else {
+            res.render("./posts/show", {post: foundPost}); 
+        }
+    });
 });
 
 router.post("/posts", function(req, res){
