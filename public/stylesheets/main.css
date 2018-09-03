@@ -60,6 +60,11 @@ p {
     font-family: 'Iceland', cursive;
 }
 
+.first-letter {
+    font-size: 5rem;
+    line-height: 0.8;
+}
+
 .form-inline {
     display: inline-block;
 }
@@ -97,6 +102,12 @@ p {
     border: 0.05rem solid #E50529;
     border-radius: 1.8rem;
     padding-top: 2rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+}
+
+.jumbotron.post p {
+    padding-top: 0.5rem;
 }
 
 .navbar-brand {
