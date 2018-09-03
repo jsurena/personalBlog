@@ -16,7 +16,7 @@
                     <div class="preview-author">By: <%= post.author.username %> </div>
                     <div class="preview-date"><%= post.created.toDateString() %></div>
                     <p class="preview-content">
-                        <%= post.content.substr(0, 450); %>...
+                        <%= post.content.substr(39, 400); %>...
                     </p>
                     <a class="btn btn-sm btn-outline-danger" id="read-more" href="/posts/<%= post._id %>">Read more...</a>
                 </div>
