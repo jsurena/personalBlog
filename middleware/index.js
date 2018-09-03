@@ -2,7 +2,7 @@ let middlewareObj = {};
 
 middlewareObj.isLoggedIn = function(req, res, next) {
     if(req.isAuthenticated()){
-        if(currentUser.username === "Jean-Sebastien Surena"){
+        if(req.user.username === "Jean-Sebastien Surena"){
             return next();
         }
         req.flash("error", "You need to be me to do that.");
