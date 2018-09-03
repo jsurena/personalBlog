@@ -1,9 +1,11 @@
 var express    = require ("express"),
     Post       = require("../models/post"),
     router     = express.Router(),
-    DOMParser  = require("dom-parser");
+    DOMParser  = require("dom-parser"),
+    $          = require("jquery"),
+    middleware = require("../middleware");;
 
-router.get("/posts/new", function(req, res){
+router.get("/posts/new", middleware.isLoggedIn, function(req, res){
     res.render("./posts/new");
 });
 
@@ -13,8 +15,8 @@ router.get("/posts/:id", function(req, res){
         if(err) {
             console.log("ERROR");
         } else {
-            let content = new DOMParser().parseFromString(foundPost.content);
-            res.render("./posts/show", {post: foundPost, content: content}); 
+            // let content = new DOMParser().parseFromString(foundPost.content);
+            res.render("./posts/show", {post: foundPost}); 
         }
     });
 });
@@ -27,7 +29,7 @@ router.post("/posts", function(req, res){
     }, function(err, newPost){
         if(err) {
             console.log("ERROR");
-            res.render("back");
+            res.render("./posts/new");
         } else {
             newPost.author.id = req.user._id;
             newPost.author.username = req.user.username;
