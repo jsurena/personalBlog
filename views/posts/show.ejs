@@ -5,15 +5,14 @@
     <div class="jumbotron post">
         <img class="align-self-center post-image" src="<%= post.image %>">
         <div id="the-content">
-        <%- // post.content %>
-        <% include baconipsum.ejs %>
+        <%- post.content %>
         </div>
         <p></p>
         <p class ="post-author">By: <%= post.author.username %></p>
         <p class ="post-date"><%= post.created.toDateString() %></p>
         <% if(currentUser && currentUser.username === "Jean-Sebastien Surena"){ %>
             <a href="/posts/<%= post._id %>/edit" class="btn btn-outline-warning">Edit</a>
-            <form class="form-inline" action="/posts/<%= post._id %>?_method=DELETE" method="POST">     
+            <form class="form-inline" action="/posts/<%= post._id %>/delete" method="GET">     
                 <button class="btn btn-outline-danger btn-">Delete</button>
             </form>
         <% } %>

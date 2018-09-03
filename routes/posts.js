@@ -65,5 +65,25 @@ router.put("/posts/:id", middleware.isLoggedIn, function(req, res){
 });
 
 // DESTROY ROUTE
+router.get("/posts/:id/delete", function(req, res){
+   Post.findById(req.params.id, function(err, foundPost){
+       if(err){
+           console.log(err);
+           res.redirect("./posts/show", {post: foundPost});
+       } else {
+            res.render("./posts/delete", {post: foundPost});
+       }
+   });
+});
 
+router.delete("/posts/:id", function(req, res){
+   Post.findByIdAndRemove(req.params.id, function(err){
+       if(err){
+           console.log(err);
+           res.redirect("/");
+       } else {
+           res.redirect("/");
+       }
+   });
+});
 module.exports = router;
