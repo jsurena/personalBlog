@@ -13,7 +13,7 @@
         <p class ="post-date"><%= post.created.toDateString() %></p>
         <% if(currentUser && currentUser.username === "Jean-Sebastien Surena"){ %>
             <a href="/posts/<%= post._id %>/edit" class="btn btn-outline-warning">Edit</a>
-            <form id="delete" class="form-inline" action="/posts/<%= post._id %>?_method=DELETE" method="POST">     
+            <form class="form-inline" action="/posts/<%= post._id %>?_method=DELETE" method="POST">     
                 <button class="btn btn-outline-danger btn-">Delete</button>
             </form>
         <% } %>

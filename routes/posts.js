@@ -9,7 +9,7 @@ router.get("/posts/new", middleware.isLoggedIn, function(req, res){
     res.render("./posts/new");
 });
 
-//SHOW ROUTE
+// SHOW ROUTE
 router.get("/posts/:id", function(req, res){
     Post.findById(req.params.id, function(err, foundPost){
         if(err) {
@@ -21,6 +21,7 @@ router.get("/posts/:id", function(req, res){
     });
 });
 
+// CREATE ROUTE
 router.post("/posts", function(req, res){
     Post.create({
         title: req.body.title,
@@ -38,5 +39,18 @@ router.post("/posts", function(req, res){
         }
     });
 });
+
+// EDIT ROUTE
+router.get("/posts/:id/edit", middleware.isLoggedIn, function(req, res){
+    Post.findById(req.params.id, function(err, foundPost){
+        if(err){
+            req.flash("error", "Could not find that post.");
+        } else {
+            res.render("/posts/edit", {post: foundPost});
+        }
+    });
+});
+
+// UPDATE ROUTE
 
 module.exports = router;
