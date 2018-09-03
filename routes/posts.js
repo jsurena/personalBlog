@@ -46,11 +46,24 @@ router.get("/posts/:id/edit", middleware.isLoggedIn, function(req, res){
         if(err){
             req.flash("error", "Could not find that post.");
         } else {
-            res.render("/posts/edit", {post: foundPost});
+            res.render("./posts/edit", {post: foundPost});
         }
     });
 });
 
 // UPDATE ROUTE
+router.put("/posts/:id", middleware.isLoggedIn, function(req, res){
+   Post.findByIdAndUpdate(req.params.id, req.body.post, function(err){
+      if(err){
+          res.redirect("/");
+          req.flash("error", "Could not be updated.");
+          console.log(err);
+      } else {
+          res.redirect("/");
+      } 
+   });
+});
+
+// DESTROY ROUTE
 
 module.exports = router;
