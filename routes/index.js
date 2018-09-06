@@ -27,8 +27,9 @@ router.get("/gallery", function(req, res){
     res.render("gallery");
 });
 
-router.get("/search", function(req, res){
-   res.render("search", {search: req.body.search}); 
+router.post("/search", function(req, res){
+   let searchTerm = req.body.search;
+   res.render("search", {search: searchTerm});
 });
 
 // REGISTRATION
