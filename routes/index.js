@@ -28,7 +28,8 @@ router.get("/gallery", function(req, res){
 });
 
 router.post("/search/:query", function(req, res){
-    Post.find({ name: /^req.params.query/ }, function(err, foundPosts){
+    let query = req.params.query;
+    Post.find({ name: /^query/ }, function(err, foundPosts){
         if(err){
             console.log(err);
         } else {
