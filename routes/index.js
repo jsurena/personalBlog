@@ -27,9 +27,16 @@ router.get("/gallery", function(req, res){
     res.render("gallery");
 });
 
-router.post("/search", function(req, res){
-   let searchTerm = req.body.search;
-   res.render("search", {search: searchTerm});
+router.post("/search/:query", function(req, res){
+    Post.find({ name: /^req.params.query/ }, function(err, foundPosts){
+        if(err){
+            console.log(err);
+        } else {
+            let searchTerm = req.body.search;
+            res.render("search", {search: searchTerm, posts: foundPosts});
+        }
+    });
+   
 });
 
 // REGISTRATION
