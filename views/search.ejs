@@ -4,7 +4,7 @@
     <h1 class="display-4">Search Results</h1>
     <div class="jumbotron search">
         <p<h4 class="search-head">You searched for: <span class="search-term"><%= search %></span></h4>
-        <% for(let i = 0; i < posts.length; i++){ let post = post[i];%>
+        <% for(let i = posts.length - 1; i >= 0; i--){ post = posts[i]; %>
             <div class="media">
                 <img class="align-self-center mr-3 preview-image" src="<%= post.image %>">
                 <div class="media-body">

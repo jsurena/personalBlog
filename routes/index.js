@@ -40,7 +40,6 @@ router.get("/search", function(req, res){
             if(err){
                 console.log(err);
             } else {
-                let searchTerm = req.body.search;
                 res.render("search", {search: req.query.search, posts: foundPosts});
             }
         });
