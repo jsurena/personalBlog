@@ -26,7 +26,7 @@ router.get("/about", function(req, res){
 router.get("/gallery", function(req, res){
     Post.find({}, function(err, posts){
         if(err){
-            console.log("ERROR");
+            console.log(err);
         } else {
             res.render("gallery", {posts: posts});
         }
