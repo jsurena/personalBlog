@@ -4,8 +4,19 @@
     <h1 class="display-4">Search Results</h1>
     <div class="jumbotron search">
         <p<h4 class="search-head">You searched for: <span class="search-term"><%= search %></span></h4>
-        <% for(let i = 0; i < posts.length; i++){ %>
-        <p><%= posts.title %></p>
+        <% for(let i = 0; i < posts.length; i++){ let post = post[i];%>
+            <div class="media">
+                <img class="align-self-center mr-3 preview-image" src="<%= post.image %>">
+                <div class="media-body">
+                    <h3 class="preview-title mt-0"><%= post.title %> </h3>
+                    <div class="preview-author">By: <%= post.author.username %> </div>
+                    <div class="preview-date"><%= post.created.toDateString() %></div>
+                    <p class="preview-content">
+                        <%= post.content.substr(80, 310); %>...
+                    </p>
+                    <a class="btn btn-sm btn-outline-danger" id="read-more" href="/posts/<%= post._id %>">Read more...</a>
+                </div>
+            </div>
         <% } %>
 
     </div>
