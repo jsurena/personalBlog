@@ -4,13 +4,17 @@
     <h1 class="display-4"><i class="fas fa-terminal title-icon"></i>Gallery</h1>
     
     <div class="jumbotron gallery">
-        <p>This gallery is intended to display both pictures of projects I am 
+        <div class="row">
+        <div class="col-12"><p>This gallery is intended to display both pictures of projects I am 
         currently working on, as well as photos of myself at various events that
-        I attend. They will almost always tie back to the blogs that I write.</p>
+        I attend. They will almost always tie back to the blogs that I write.</p></div>
         
         <% for(let i = 0; i < posts.length; i++){ post = posts[i]; %>
+        <div class="col-md-4 col-sm-6 col-xs-12">
             <img src="<%= post.image %>" class="img-thumbnail">
+        </div>
         <% } %>
+        </div>
     </div>
 
 </div>
