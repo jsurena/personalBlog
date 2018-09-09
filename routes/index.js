@@ -35,7 +35,15 @@ router.get("/gallery", function(req, res){
 
 router.post("/search", function(req, res){
     if(req.query.search){
-        
+        const regex= new RegExp(escapeRegex(req.query.search), 'gi');
+        Post.find({}, function(err, foundPosts){
+            if(err){
+                console.log(err);
+            } else {
+                let searchTerm = req.body.search;
+                res.render("search", {search: searchTerm, posts: foundPosts});
+            }
+        });
     }
     Post.find({}, function(err, foundPosts){
         if(err){
