@@ -69,6 +69,14 @@ p {
     display: inline-block;
 }
 
+.img-thumbnail {
+    min-width: 200px;
+    min-height: 200px;
+    max-width: 200px;
+    max-height: 200px;
+    margin: 2vh;
+}
+
 .jumbotron.previews {
     background-color: #ffffff;
     border: 0.05rem solid #E50529;
