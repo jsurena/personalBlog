@@ -24,7 +24,13 @@ router.get("/about", function(req, res){
 });
 
 router.get("/gallery", function(req, res){
-    res.render("gallery");
+    Post.find({}, function(err, posts){
+        if(err){
+            console.log("ERROR");
+        } else {
+            res.render("gallery", {posts: posts});
+        }
+    });
 });
 
 router.post("/search/:query", function(req, res){
