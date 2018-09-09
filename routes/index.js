@@ -33,9 +33,11 @@ router.get("/gallery", function(req, res){
     });
 });
 
-router.post("/search/:query", function(req, res){
-    let query = req.params.query;
-    Post.find({ name: /^query/ }, function(err, foundPosts){
+router.post("/search", function(req, res){
+    if(req.query.search){
+        
+    }
+    Post.find({}, function(err, foundPosts){
         if(err){
             console.log(err);
         } else {
