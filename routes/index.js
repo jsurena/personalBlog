@@ -86,4 +86,8 @@ router.get("/logout", function(req, res){
    res.redirect("back");
 });
 
+function escapeRegex(text) {
+    return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+}
+
 module.exports = router;
