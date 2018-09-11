@@ -20,7 +20,19 @@
         <h2 class="display-4 comment-header">Comments</h2>
         <div class="jumbotron comments">
             <% Post.comments.forEach(function(comment) { %>
-                
+                <div class="row">
+                    <div class="col-md-12">
+                        <%= comment.author.username %>
+                        <span class="comment-date"><%= comment.created %></span>
+                        <p><%= comment.text %></p>
+                        <% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
+                        <a class="btn btn-xs btn-outline-warning" href="/posts/<%= post._id %>/comments/<%= comment._id %>/edit">Edit</a>
+                        <form action="/posts/<%= post._id %>/comments/<%= comment._id %>/delete" method="POST">
+                            <input type="submit" class="btn btn-xs btn-outline-danger" value="Delete">
+                        </form>
+                        <% } %>
+                    </div>
+                </div>
             <% }); %>
             
         </div>
