@@ -19,7 +19,7 @@
     </div>
         <h2 class="display-4 comment-header">Comments</h2>
         <div class="jumbotron comments">
-            <% Post.comments.forEach(function(comment) { %>
+            <% post.comments.forEach(function(comment) { %>
                 <div class="row">
                     <div class="col-md-12">
                         <%= comment.author.username %>
