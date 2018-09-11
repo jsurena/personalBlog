@@ -8,7 +8,8 @@ var commentSchema = new mongoose.Schema({
             ref: "User"
         },
         username: String
-    }
+    },
+    created: {type: Date, default: Date.now}
 });
 
 var Post = mongoose.model("Comment", commentSchema);
