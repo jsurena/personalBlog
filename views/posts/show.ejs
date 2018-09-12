@@ -19,6 +19,13 @@
     </div>
         <h2 class="display-4 comment-header">Comments</h2>
         <div class="jumbotron comments">
+            <form class="new-comment" action="/posts/<%= post._id %>/comments" method="GET">
+                <div class="form-group">
+                    <label>Add a new comment:</label>
+                    <p><textarea name="userComment" class="comment-area"></textarea></p>
+                </div>
+                <input type="submit" class="btn btn-outline-default">
+            </form>
             <% post.comments.forEach(function(comment) { %>
                 <div class="row">
                     <div class="col-md-12">
