@@ -13,6 +13,7 @@ var express         = require("express"),
     
 var indexRoutes = require("./routes/index");
 var postRoutes  = require("./routes/posts");
+var commentRoutes = require("./routes/comments");
 
 mongoose.connect("mongodb://" + process.env.IP + "/the_black_code", { useNewUrlParser: true });
 var db = mongoose.connection;
@@ -50,6 +51,7 @@ app.use(function(req, res, next){
 
 app.use(indexRoutes);
 app.use(postRoutes);
+app.use(commentRoutes);
 
 // Post.create({
 //     title: "Test Blog",
