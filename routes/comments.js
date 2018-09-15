@@ -22,7 +22,13 @@ router.post("/posts/:id/comments", function(req, res){
 
 // EDIT ROUTE
 router.get("/posts/:id/comments/:comment_id/edit", middleware.isLoggedIn, function(req, res){
-
+    Comment.findById(req.params.comment_id, function(err, comment){
+        if(err){
+            console.log(err);
+        } else {
+            res.render("comments/edit");
+        }
+    });
 });
 
 // UPDATE ROUTE
