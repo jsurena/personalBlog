@@ -44,13 +44,17 @@ router.put("/posts/:id/comments/:comment_id", middleware.isLoggedIn, function(re
 });
 
 // DESTROY ROUTE
-router.get("/posts/:id/comments/:comment_id/delete", function(req, res){
-
-});
-
 router.delete("/posts/:id/comments/:comment_id", function(req, res){
-
+    Comment.findByIdAndRemove(req.params.comment_id, function(err, comment){
+       if(err){
+           console.log(err);
+           res.redirect("back");
+       } else {
+           res.redirect("/posts/" + req.params.id);
+       }
+    });
 });
+
 
 module.exports = router;
 
