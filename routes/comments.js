@@ -5,12 +5,16 @@ var Comment    = require("../models/comment");
 var middleware = require("../middleware");
 
 // CREATE ROUTE
-router.post("/posts/:id/comments", function(req, res){
+router.post("/posts/:id/comments", middleware.isLoggedIn, function(req, res){
     Post.findById(req.params.id, function(err, post) {
         if(err) {
             console.log(err);
         } else {
             Comment.create(req.body.userComment, function(err, comment){
+                if(err){
+                    console.log(err);
+                    res.redirect("back");
+                }
                comment.author.id = req.user._id;
                comment.author.username = req.user.username;
                comment.save();
@@ -44,7 +48,7 @@ router.put("/posts/:id/comments/:comment_id", middleware.isLoggedIn, function(re
 });
 
 // DESTROY ROUTE
-router.delete("/posts/:id/comments/:comment_id", function(req, res){
+router.delete("/posts/:id/comments/:comment_id", middleware.isLoggedIn, function(req, res){
     Comment.findByIdAndRemove(req.params.comment_id, function(err, comment){
        if(err){
            console.log(err);
