@@ -33,7 +33,14 @@ router.get("/posts/:id/comments/:comment_id/edit", middleware.isLoggedIn, functi
 
 // UPDATE ROUTE
 router.put("/posts/:id/comments/:comment_id", middleware.isLoggedIn, function(req, res){
-
+    Comment.findByIdAndUpdate(req.params.comment_id, function(err, comment){
+       if(err){
+           console.log(err);
+           res.redirect("back");
+       } else {
+           res.redirect("/posts" + req.params.id);
+       }
+    });
 });
 
 // DESTROY ROUTE
