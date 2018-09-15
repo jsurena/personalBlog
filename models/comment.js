@@ -12,6 +12,6 @@ var commentSchema = new mongoose.Schema({
     created: {type: Date, default: Date.now}
 });
 
-var Post = mongoose.model("Comment", commentSchema);
+var Comment = mongoose.model("Comment", commentSchema);
 
-module.exports = Post;
+module.exports = Comment;
