@@ -4,13 +4,20 @@ var Post       = require("../models/post");
 var Comment    = require("../models/comment");
 var middleware = require("../middleware");
 
-router.get("/posts/:id/comments/new", middleware.isLoggedIn, function(req, res){
-
-});
-
 // CREATE ROUTE
 router.post("/posts/:id/comments", function(req, res){
-
+    Post.findById(req.params.id, function(err, post) {
+        if(err) {
+            console.log(err);
+        } else {
+            Comment.create(req.body.userComment, function(err, comment){
+               comment.author.id = req.user._id;
+               comment.author.username = req.user.username;
+               comment.save();
+               post.comments.push(comment);
+            });
+        }
+    });
 });
 
 // EDIT ROUTE
