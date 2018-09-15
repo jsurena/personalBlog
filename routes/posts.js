@@ -5,7 +5,7 @@ var express    = require ("express"),
     $          = require("jquery"),
     middleware = require("../middleware");;
 
-router.get("/posts/new", middleware.isLoggedIn, function(req, res){
+router.get("/posts/new", middleware.isMe, function(req, res){
     res.render("./posts/new");
 });
 
@@ -22,7 +22,7 @@ router.get("/posts/:id", function(req, res){
 });
 
 // CREATE ROUTE
-router.post("/posts", function(req, res){
+router.post("/posts", middleware.isMe, function(req, res){
     Post.create({
         title: req.body.title,
         image: req.body.image,
@@ -41,7 +41,7 @@ router.post("/posts", function(req, res){
 });
 
 // EDIT ROUTE
-router.get("/posts/:id/edit", middleware.isLoggedIn, function(req, res){
+router.get("/posts/:id/edit", middleware.isMe, function(req, res){
     Post.findById(req.params.id, function(err, foundPost){
         if(err){
             req.flash("error", "Could not find that post.");
@@ -52,7 +52,7 @@ router.get("/posts/:id/edit", middleware.isLoggedIn, function(req, res){
 });
 
 // UPDATE ROUTE
-router.put("/posts/:id", middleware.isLoggedIn, function(req, res){
+router.put("/posts/:id", middleware.isMe, function(req, res){
    Post.findByIdAndUpdate(req.params.id, req.body.post, function(err){
       if(err){
           res.redirect("/");
@@ -65,7 +65,7 @@ router.put("/posts/:id", middleware.isLoggedIn, function(req, res){
 });
 
 // DESTROY ROUTE
-router.get("/posts/:id/delete", function(req, res){
+router.get("/posts/:id/delete", middleware.isMe, function(req, res){
    Post.findById(req.params.id, function(err, foundPost){
        if(err){
            console.log(err);
@@ -76,7 +76,7 @@ router.get("/posts/:id/delete", function(req, res){
    });
 });
 
-router.delete("/posts/:id", function(req, res){
+router.delete("/posts/:id", middleware.isMe, function(req, res){
    Post.findByIdAndRemove(req.params.id, function(err){
        if(err){
            console.log(err);
