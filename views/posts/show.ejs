@@ -26,9 +26,10 @@
                 </div>
                 <input type="submit" class="btn btn-outline-default">
             </form>
-            <% for(let i = 0; i < post.comments.length; i++) { let comment = post.comments[i]; %>
+            <% for(let i = 0; i < post.comments.length; i++) { let comment = post.comments[i] %>
                 <div class="row">
                     <div class="col-md-12">
+                        <% console.log(post) %>
                         <%= comment.author.username %>
                         <span class="comment-date"><%= comment.created.toDateString() %></span>
                         <p><%= comment.text %></p>

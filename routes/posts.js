@@ -11,7 +11,7 @@ router.get("/posts/new", middleware.isMe, function(req, res){
 
 // SHOW ROUTE
 router.get("/posts/:id", function(req, res){
-    Post.findById(req.params.id, function(err, foundPost){
+    Post.findById(req.params.id).populate("comments").exec(function(err, foundPost){
         if(err) {
             console.log("ERROR");
         } else {
