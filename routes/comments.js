@@ -10,11 +10,12 @@ router.post("/posts/:id/comments", middleware.isLoggedIn, function(req, res){
         if(err) {
             console.log(err);
         } else {
-            Comment.create(req.body.comment, function(err, comment){
+            Comment.create({}, function(err, comment){
                 if(err){
                     console.log(err);
                     res.redirect("back");
                 } else {
+                   comment.text = req.body.text;    
                    comment.author.id = req.user._id;
                    comment.author.username = req.user.username;
                    comment.save();
