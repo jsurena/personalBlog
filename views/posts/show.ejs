@@ -29,7 +29,8 @@
             <% for(let i = 0; i < post.comments.length; i++) { let comment = post.comments[i] %>
                 <div class="row">
                     <div class="col-md-12">
-                        <%= comment.author.username %>
+                    <div class="comment">
+                        <span class="comment-name"><%= comment.author.username %></span>
                         <span class="comment-date"><%= comment.created.toDateString() %></span>
                         <p><%= comment.text %></p>
                         <% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
@@ -38,6 +39,7 @@
                             <input type="submit" class="btn btn-xs btn-outline-danger" value="Delete">
                         </form>
                         <% } %>
+                    </div>
                     </div>
                 </div>
             <% } %>

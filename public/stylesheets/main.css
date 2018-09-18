@@ -56,8 +56,16 @@ p {
     padding: 0.8vh;
 }
 
+.comment {
+    padding-top: 5vh;
+}
+
 .comment-date {
     float: right;
+}
+
+.comment-name {
+    color: #E50529;
 }
 
 .display-4 {
