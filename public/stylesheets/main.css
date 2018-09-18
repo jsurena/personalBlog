@@ -60,8 +60,13 @@ p {
     padding-top: 5vh;
 }
 
+.comment-buttons {
+    display: inline;
+}
+
 .comment-date {
     float: right;
+    font-size: 1.0rem;
 }
 
 .comment-name {

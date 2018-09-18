@@ -24,7 +24,7 @@
                     <label>Add a new comment:</label>
                     <p><textarea name="text" class="comment-area form-control"></textarea></p>
                 </div>
-                <input type="submit" class="btn btn-outline-default">
+                <input type="submit" class="btn btn-outline-danger red-button">
             </form>
             <% for(let i = 0; i < post.comments.length; i++) { let comment = post.comments[i] %>
                 <div class="row">
@@ -34,10 +34,10 @@
                         <span class="comment-date"><%= comment.created.toDateString() %></span>
                         <p><%= comment.text %></p>
                         <% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
-                        <a class="btn btn-xs btn-outline-warning" href="/posts/<%= post._id %>/comments/<%= comment._id %>/edit">Edit</a>
-                        <form action="/posts/<%= post._id %>/comments/<%= comment._id %>/delete" method="POST">
-                            <input type="submit" class="btn btn-xs btn-outline-danger" value="Delete">
-                        </form>
+                        <span class="comment-buttons"><a class="btn btn-sm btn-outline-warning" href="/posts/<%= post._id %>/comments/<%= comment._id %>/edit">Edit</a>
+                        <form class="form-inline" action="/posts/<%= post._id %>/comments/<%= comment._id %>/delete" method="POST">
+                            <input type="submit" class="btn btn-sm btn-outline-danger" value="Delete">
+                        </form></span>
                         <% } %>
                     </div>
                     </div>
