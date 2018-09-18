@@ -56,6 +56,10 @@ p {
     padding: 0.8vh;
 }
 
+.comment-date {
+    float: right;
+}
+
 .display-4 {
     font-family: 'Iceland', cursive;
 }
