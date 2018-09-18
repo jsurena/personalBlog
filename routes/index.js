@@ -36,7 +36,7 @@ router.get("/gallery", function(req, res){
 router.get("/search", function(req, res){
     if(req.query.search){
         const regex = new RegExp(escapeRegex(req.query.search), 'gi');
-        Post.find({name: regex}, function(err, foundPosts){
+        Post.find({title: regex}, function(err, foundPosts){
             if(err){
                 console.log(err);
             } else {

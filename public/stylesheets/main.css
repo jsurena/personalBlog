@@ -57,7 +57,7 @@ p {
 }
 
 .comment {
-    padding-top: 5vh;
+    padding-top: 3vh;
 }
 
 .comment-buttons {
@@ -71,6 +71,15 @@ p {
 
 .comment-name {
     color: #E50529;
+}
+
+.comment-rule {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+.comment-submit {
+    margin-bottom: 5vh;
 }
 
 .display-4 {
