@@ -56,6 +56,10 @@ p {
     padding: 0.8vh;
 }
 
+.centered {
+    text-align: center;
+}
+
 .comment {
     padding-top: 3vh;
 }
