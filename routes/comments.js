@@ -34,7 +34,7 @@ router.get("/posts/:id/comments/:comment_id/edit", middleware.isLoggedIn, functi
         if(err){
             console.log(err);
         } else {
-            res.render("comments/edit", {comment: foundComment});
+            res.render("comments/edit", {post_id: req.params.id, comment: foundComment});
         }
     });
 });
