@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css">
+
+<% include ../partials/header %>
+    <div class="container">
+        <h1 class="display-4">The Black Code</h1>
+    
+        <div class="jumbotron new-post">
+            <form class="ui form" action="/posts/<%= post_id %>/comments/<%= comment._id %>?_method=PUT" method="POST">
+                <div class="field">
+                    <label>Comment:</label>
+                    <textarea name="comment[text]" required><%= post.content %></textarea>
+                </div>
+                <input class="btn btn-lg btn-outline-danger red-button" type="submit">
+            </form>
+        </div>
+    </div>
+<% include ../partials/footer %>
