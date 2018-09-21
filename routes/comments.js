@@ -30,11 +30,11 @@ router.post("/posts/:id/comments", middleware.isLoggedIn, function(req, res){
 
 // EDIT ROUTE
 router.get("/posts/:id/comments/:comment_id/edit", middleware.isLoggedIn, function(req, res){
-    Comment.findById(req.params.comment_id, function(err, comment){
+    Comment.findById(req.params.comment_id, function(err, foundComment){
         if(err){
             console.log(err);
         } else {
-            res.render("comments/edit");
+            res.render("comments/edit", {comment: foundComment});
         }
     });
 });
