@@ -26,6 +26,7 @@ router.post("/posts", middleware.isMe, function(req, res){
     Post.create({
         title: req.body.title,
         image: req.body.image,
+        abstract: req.body.abstract,
         content: req.body.body
     }, function(err, newPost){
         if(err) {
