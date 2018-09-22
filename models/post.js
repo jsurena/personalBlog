@@ -5,6 +5,7 @@ mongoose.connect("mongodb://" + process.env.IP + "/the_black_code", { useNewUrlP
 var postSchema = mongoose.Schema({
     title: String,
     image: String,
+    abstract: String,
     content: String,
     author: {
       id: {
