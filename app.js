@@ -16,6 +16,7 @@ var postRoutes  = require("./routes/posts");
 var commentRoutes = require("./routes/comments");
 
 let url = process.env.DATABASEURL || "mongodb://" + process.env.IP + "/the_black_code"
+// let url = "mongodb://jsurena:jean18@ds111993.mlab.com:11993/the_black_code";
 mongoose.connect(url, { useNewUrlParser: true });
 var db = mongoose.connection;
 
