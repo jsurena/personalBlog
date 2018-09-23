@@ -15,7 +15,8 @@ var indexRoutes = require("./routes/index");
 var postRoutes  = require("./routes/posts");
 var commentRoutes = require("./routes/comments");
 
-mongoose.connect("mongodb://" + process.env.IP + "/the_black_code", { useNewUrlParser: true });
+let url = process.env.DATABASEURL || "mongodb://" + process.env.IP + "/the_black_code"
+mongoose.connect(url, { useNewUrlParser: true });
 var db = mongoose.connection;
 
 db.on("error", console.error.bind(console, "connection error:"));
